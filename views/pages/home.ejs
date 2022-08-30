@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!--!Exportação do head e definição do Título!-->
+    <%- include('../partials/head'); %>
+    <title>Página Inicial</title>
+</head>
+<body>
+    <!--!Cabeçalho-->
+    <%- include('../partials/header'); %>
+
+    <!--!Conteúdo principal-->
+    <main>
+        <!--*Título da página-->
+        <h1>Seja bem-vindo!</h1>
+
+        <!--*Botão de saída-->
+        <a href="/logout">
+            <button class="btn btn-primary btn-xs">
+                Sair
+            </button>
+        </a>
+        
+    </main>
+
+    <!--!Rodapé-->
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+    
+    <!--!Importação do Scripts-->
+    <%- include('../partials/scripts'); %>
+</body>
+</html>
