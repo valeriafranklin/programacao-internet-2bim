@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body{
+            background-color: black;
+        }
+    </style>
+    <script>
+        function somar(x,y){
+            return Number(x) + Number(y)
+        }
+        function sub(x,y){
+            return Number(x) - Number(y)
+        }
+        function mult(x,y){
+            return Number(x) * Number(y)
+        }
+        function div(x,y){
+            return Number(x) / Number(y)
+        }
+
+        do {
+            
+            var n1 = prompt("Digite um numero")
+            var n2 = prompt("Digite outro numero")
+            var op = prompt(` 1 - Somar \n 2 - Subtrair \n 3 - Multiplicar \n 4 - Dividir`)
+
+            if (op == 1) {
+                alert(somar(n1,n2))
+            }else if (op == 2){
+                alert(sub(n1,n2))
+            }else if (op == 3){
+                alert(mult(n1,n2))
+            }else if (op == 4){
+                alert(div(n1,n2))
+            }
+
+        } while (confirm("Voltar para o menu principal ?") ? true : false);
+    </script>
+</body>
+</html>

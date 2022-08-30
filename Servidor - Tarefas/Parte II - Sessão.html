@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda</title>
+</head>
+<body>
+    <style>
+        body{
+            background-color: black;
+        }
+    </style>
+    <script>
+
+        var agenda = new Array() // Array global onde os contatos serão inseridos
+
+        //-----------funções------------
+
+        function cadastrar(nome, numero){ // Funão de cadastrar contatos 
+            agenda.push([nome,numero ])
+            return agenda
+        }
+
+        function listar(array){ // Função que lista os contatos
+            let texto = ""
+            for( let i = 0; i < array.length; i++){
+                texto += (`Nome: ${array[i][0]} Telefone: ${array[i][1]} \n`)
+            }
+            return window.alert(String(texto))
+        }
+
+        function buscar(nome,array){ // Função que busca o contato pelo nome
+            for (let i = 0; i < array.length; i++) {
+                if (nome == array[i][0]){
+                    return window.alert(String(` Nome: ${array[i][0]} \n Telefone: ${array[i][1]} \n`))
+                }else{
+                    return window.alert("Numero não encontrado.")
+                }
+            }
+        }
+
+        function excluir(numero,array){ // Função que deleta um número cadastrado
+            for (let i = 0; i < array.length; i++) {
+                if (numero == array[i][1]){
+                    array.splice(i,i+1)
+                    return window.alert("Numero excluido.")
+                }else{
+                    return window.alert("Numero não encontrado.")
+                }
+            }
+        }
+
+        //-----------aplicação------------
+
+        do {
+            var opcao = prompt(` 1 - Gravar \n 2 - Listar \n 3 - Buscar \n 4 - Excluir`) // Opções do menu de acesso para controle da agenda
+
+            if(opcao == "1") { // Opção de cadastrar número
+                let nome = prompt("Digite o nome do contato:")
+                let numero = prompt("Digite o numero do contato:")
+                var cadastro = cadastrar(nome,numero)
+                
+            }else if(opcao == "2"){ // Opção que lista os números cadastrados na agenda
+                listar(cadastro)
+
+            }else if(opcao == "3"){ // Opção que pesquisa número atravez do nome na agenda
+                let contato = prompt("Digite o nome:")
+                buscar(contato,agenda)
+
+            }else if(opcao == "4"){ // Opção que deleta um número da agenda
+                let numero = prompt("Digite o numero:")
+                excluir(numero,agenda)
+
+            }
+
+        } while (confirm("Voltar para o menu principal ?") ? true : false);
+        
+
+    </script>
+</body>
+</html>
